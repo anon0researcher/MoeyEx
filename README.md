@@ -15,3 +15,21 @@ The output data is as:
 - Creation Time
 
 ## Use instructions
+
+
+
+# Decrypt wallet keys file
+The wallet keys file encrypts and stores key values and wallet-related setting data.
+
+## Features
+
+## Use instructions
+    python decrypt_keys_file.py --file=<file-path> --password=<wallet-password"
+
+# Decrypt wallet cache file
+The wallet cache file encrypts and stores transactions data related to imcoming, outgoing.
+
+## Features
+
+## Use instructions
+    python decrypt_cache_file.py --file=<file-path> --password=<wallet-password"
