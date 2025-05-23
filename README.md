@@ -28,6 +28,7 @@ The wallet keys file encrypts and stores key values and wallet-related setting d
 
 # Decrypt wallet cache file
 The wallet cache file encrypts and stores transactions data related to imcoming, outgoing.
+
 (The code can be decrypted for wallets that do not have an unconfirmed transaction and do not use subaddress and multisignature)
 
 ## Features
