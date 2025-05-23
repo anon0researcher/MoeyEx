@@ -60,3 +60,7 @@ The wallet cache file encrypts and stores transactions data related to imcoming,
    ```
    python decrypt_cache_file.py --file=<file-path> --password=<wallet-password>
    ```
+
+# Notice: Modified Third-Party Code
+This repository includes code adapted from the py-cryptonight project.
+Original repository: https://github.com/ph4r05/py-cryptonight
