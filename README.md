@@ -15,8 +15,17 @@ The output data is as:
 - Creation Time
 
 ## Use instructions
-
-
+1. py-cryptonight install
+   - Run cmd in the py-cryptonite folder
+   ```
+    python setup.py install
+   ```
+2. Save moeyex folder in the location below
+   - \volatility3\volatility3\plugins\
+3. Run moeyex plugin
+   ```
+   python vol.py moeyex --file-path=<file-path> --passphrase=<wallet-password>
+   ```
 
 # Decrypt wallet keys file
 The wallet keys file encrypts and stores key values and wallet-related setting data.
@@ -24,7 +33,15 @@ The wallet keys file encrypts and stores key values and wallet-related setting d
 ## Features
 
 ## Use instructions
-    python decrypt_keys_file.py --file=<file-path> --password=<wallet-password"
+1. py-cryptonight install
+   - Run cmd in the py-cryptonite folder
+   ```
+    python setup.py install
+   ```
+2. Run decrypt_keys_file.py
+   ```
+    python decrypt_keys_file.py --file=<file-path> --password=<wallet-password>
+   ```
 
 # Decrypt wallet cache file
 The wallet cache file encrypts and stores transactions data related to imcoming, outgoing.
@@ -34,4 +51,12 @@ The wallet cache file encrypts and stores transactions data related to imcoming,
 ## Features
 
 ## Use instructions
-    python decrypt_cache_file.py --file=<file-path> --password=<wallet-password"
+1. py-cryptonight install
+   - Run cmd in the py-cryptonite folder
+   ```
+    python setup.py install
+   ```
+2. Run decrypt_cache_file.py
+   ```
+   python decrypt_cache_file.py --file=<file-path> --password=<wallet-password>
+   ```
