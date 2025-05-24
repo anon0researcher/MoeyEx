@@ -31,7 +31,7 @@ The output data is as:
 The wallet keys file encrypts and stores key values and wallet-related setting data.
 
 ## Features
-decrypt_keys_file.py extracts key data(Public/Private keys) and 49 wallet-related setting data from <walletname>.keys file.
+decrypt_keys_file.py extracts key data(Public/Private keys) and 49 wallet-related setting data from &lt;walletname&gt;.keys file.
 
 The output data is as:
 
@@ -59,7 +59,7 @@ The wallet cache file encrypts and stores transactions data related to imcoming,
 (The code can be decrypted for wallets that do not have an unconfirmed transaction and do not use subaddress and multisignature)
 
 ## Features
-decrypt_wallet_file.py extracts transactions data from <walletname> file.
+decrypt_wallet_file.py extracts transactions data from &lt;walletname&gt; file.
 
 The output data is as:
 
