@@ -76,6 +76,15 @@ Type, Timestamp, BlockHeight, TX ID, TX Key, Amount, Fee, Change, Destination Ad
    python decrypt_cache_file.py --file=<file-path> --password=<wallet-password>
    ```
 
+## Tx_id sample list
+The resulting transaction IDs from running the dataset are as follows, and you can use them to view the transaction details on the Monero Explorer.
+
+1. bb957ca1aa4a548fcb09f1ba70abc5cc90a4f85d15922bb13d40bab96cb66c6b
+2. ad49c70b4e05b9f956a99523068ab9b08229168befe0e2091c97dd83489b3a39
+3. ee0f5701dafee5649eeadc4f2c1a7eaa85cdb73828010d5c3ff313882a987bb3
+4. af7934453a430895b2a5b6d8cbcbf683c13893e8650f01f80304ccc3a391b9c2
+5. f799a90e7c8518ef60aac07846064c40c8dc6d80f024f1e4d61758cf8883cba3
+
 # Notice: Modified Third-Party Code
 This repository includes code adapted from the py-cryptonight project.
 Original repository: https://github.com/ph4r05/py-cryptonight
