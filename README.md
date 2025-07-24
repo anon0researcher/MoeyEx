@@ -76,6 +76,69 @@ Type, Timestamp, BlockHeight, TX ID, TX Key, Amount, Fee, Change, Destination Ad
    python decrypt_cache_file.py --file=<file-path> --password=<wallet-password>
    ```
 
+## Deserialization of wallet file format
+### Top-level root fields of wallet cache file
+| Field Name | Size(bytes) | Description |
+| ---------- | ----------- | ----------- |
+| MAGIC FIELD(”monero wallet cache”) | 20 | Magic string ”monero wallet cache” |
+| VERSION FIELD(2) | 1 | Cache version (currently 2) |
+| m_blockchain | variable | Blockchain hash list |
+| m_transfers | variable | List of outputs owned |
+| m_account_public_address | 64 | Public spend/view key |
+| m_key_images | variable | Key image map |
+| m_unconfirmed_txs | variable | Unconfirmed outgoing transaction map |
+| m_payments | variable | Confirmed incoming transaction map |
+| m_tx_keys | variable | Outgoing transaction key map |
+| m_confirmed_txs | variable | Confirmed outcoming transaction map |
+| m_tx_notes | variable | Transaction description map |
+| m_unconfirmed_payments | variable | Unconfirmed incoming transaction map |
+| m_pub_keys | variable | Public key map |
+| m_address_book | variable | Address book map |
+| m_scanned_pool_txs[0] | variable | Scanned mempool transaction |
+| m_scanned_pool_txs[1] | variable | Scanned mempool transaction |
+| m_subaddresses | variable | Subaddress index list(major index, minor index) |
+| m_subaddress_labels | variable | Subaddress label map |
+|m_additional_tx_keys | variable | Additional transaction key |
+| m_attributes | variable | Wallet attributes |
+| m_account_tags | variable | Account labels |
+| m_ring_history_saved | variable | Ring signature history |
+| m_last_block_reward | 8 | Last mining reward |
+| m_tx_device | variable | Hardware wallet transaction data |
+| m_device_last_key_image_sync | 8 | Hardware wallet last key image synchronization time |
+| m_cold_key_images | variable | Cold wallet key image map |
+| m_has_ever_refreshed_from_node | 1 | Node synchronization status |
+| m_background_sync_data | variable | Background synchronization data |
+
+### Incoming transaction-related sub-fields in m_payments
+| Field Name | Size(bytes) | Description |
+| ---------- | ----------- | ----------- |
+| m_tx_hash | 32 | Transaction hash(tx id) |
+| m_amount | varint(1-10) | Received amount(in piconero) |
+| m_fee | varint(1-10) | Transaction fee|
+| m_block_height | varint(1-10) | Block height |
+| m_timestamp | varint(1-10) | Block creation timestamp |
+
+### Outgoing transaction-related sub-fields in m_confirmed_txs and m_dests
+#### m_confirmed_txs
+| Field Name | Size(bytes) | Description |
+| ---------- | ----------- | ----------- |
+| m_tx | variable | Transaction header |
+| m_amount_in | varint(1-10) | Before sending amount |
+| m_amount_out | varint(1-10) | Amount after subtracting fee(m_amount_in - fee) |
+| m_change | varint(1-10) | Change |
+| m_block_height | varint(1-10) | Block height |
+| m_dests | variable | Destination address etc. |
+| m_timestamp | varint(1-10) | Block creation timestamp |
+
+#### m_dests
+| Field Name | Size(bytes) | Description |
+| ---------- | ----------- | ----------- |
+| original | variable | Destination address |
+| amount | varint(1-10) | Sending amount(in piconero) |
+| addr | 64 | Recipient public key | 
+| is_subaddress | bool | Subaddress status(General address: 0x00, Subaddress: 0x01) |
+| is_integrated | bool | Integrated address status(General address: 0x00, Integrated address: 0x01) |
+
 ## Tx_id sample list
 The resulting transaction IDs from running the dataset are as follows, and you can use them to view the transaction details on the Monero Explorer.
 
